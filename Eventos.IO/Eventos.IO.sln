@@ -17,11 +17,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - CrossCutting", "5.2 - CrossCutting", "{8EB107B2-8BF1-4511-A0F9-9B37568C9899}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos.IO.Domain", "src\Evento.IO.Domain\Eventos.IO.Domain.csproj", "{16BB019A-BA8D-488A-8478-F64B7A73D4EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventos.IO.Domain", "src\Evento.IO.Domain\Eventos.IO.Domain.csproj", "{16BB019A-BA8D-488A-8478-F64B7A73D4EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos.IO.Domain.Core", "src\Evento.IO.Domain.Core\Eventos.IO.Domain.Core.csproj", "{6F8E709E-0BBB-45D5-8F41-8C42AAD5AAF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventos.IO.Domain.Core", "src\Evento.IO.Domain.Core\Eventos.IO.Domain.Core.csproj", "{6F8E709E-0BBB-45D5-8F41-8C42AAD5AAF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "src\ConsoleApp1\ConsoleApp1.csproj", "{987EC3C3-984C-4A2B-B354-1D442B5FCE53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "src\ConsoleApp1\ConsoleApp1.csproj", "{987EC3C3-984C-4A2B-B354-1D442B5FCE53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

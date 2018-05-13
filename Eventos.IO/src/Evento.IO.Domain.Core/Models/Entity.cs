@@ -1,10 +1,8 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Eventos.IO.Domain.Core
+namespace Eventos.IO.Domain.Core.Models
 {
     public abstract class Entity<T> : AbstractValidator<T> where T : Entity<T>
     {
