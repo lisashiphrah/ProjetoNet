@@ -7,10 +7,10 @@ C:\Git\ProjetoNet\Eventos.IO\src\ConsoleApp1\bin\Debug\netcoreapp2.0\Eventos.IO.
 C:\Git\ProjetoNet\Eventos.IO\src\ConsoleApp1\bin\Debug\netcoreapp2.0\Eventos.IO.Domain.dll
 C:\Git\ProjetoNet\Eventos.IO\src\ConsoleApp1\bin\Debug\netcoreapp2.0\Eventos.IO.Domain.pdb
 C:\Git\ProjetoNet\Eventos.IO\src\ConsoleApp1\bin\Debug\netcoreapp2.0\Eventos.IO.Domain.Core.pdb
-C:\Git\ProjetoNet\Eventos.IO\src\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp1.csprojResolveAssemblyReference.cache
 C:\Git\ProjetoNet\Eventos.IO\src\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp1.csproj.CoreCompileInputs.cache
 C:\Git\ProjetoNet\Eventos.IO\src\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp1.AssemblyInfoInputs.cache
 C:\Git\ProjetoNet\Eventos.IO\src\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp1.AssemblyInfo.cs
 C:\Git\ProjetoNet\Eventos.IO\src\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp1.csproj.CopyComplete
 C:\Git\ProjetoNet\Eventos.IO\src\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp1.dll
 C:\Git\ProjetoNet\Eventos.IO\src\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp1.pdb
+C:\Git\ProjetoNet\Eventos.IO\src\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp1.csprojAssemblyReference.cache
