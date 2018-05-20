@@ -28,6 +28,7 @@ namespace Eventos.IO.Domain.Eventos
             NomeEmpresa = nomeEmpresa;
         }
 
+        // Contrutor para o EF
         private Evento(){}
 
         public string Nome { get; private set; }
@@ -187,8 +188,8 @@ namespace Eventos.IO.Domain.Eventos
                     CategoriaId = categoriaId
                 };
 
-                if (organizadorId != null)
-                    evento.Organizador = new Organizador(organizadorId.Value);
+                if (organizadorId.HasValue)
+                    evento.OrganizadorId = organizadorId.Value;
 
                 if (online)
                     evento.Endereco = null;
