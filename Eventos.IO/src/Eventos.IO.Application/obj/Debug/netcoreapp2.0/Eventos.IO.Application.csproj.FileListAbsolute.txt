@@ -1,0 +1,16 @@
+C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Application\bin\Debug\netcoreapp2.0\Eventos.IO.Application.deps.json
+C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Application\bin\Debug\netcoreapp2.0\Eventos.IO.Application.dll
+C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Application\bin\Debug\netcoreapp2.0\Eventos.IO.Application.pdb
+C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Application\bin\Debug\netcoreapp2.0\Eventos.IO.Domain.Core.dll
+C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Application\bin\Debug\netcoreapp2.0\Eventos.IO.Domain.dll
+C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Application\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Application\bin\Debug\netcoreapp2.0\Eventos.IO.Domain.Core.pdb
+C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Application\bin\Debug\netcoreapp2.0\Eventos.IO.Domain.pdb
+C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Application\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.xml
+C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Application\obj\Debug\netcoreapp2.0\Eventos.IO.Application.csprojAssemblyReference.cache
+C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Application\obj\Debug\netcoreapp2.0\Eventos.IO.Application.csproj.CoreCompileInputs.cache
+C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Application\obj\Debug\netcoreapp2.0\Eventos.IO.Application.AssemblyInfoInputs.cache
+C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Application\obj\Debug\netcoreapp2.0\Eventos.IO.Application.AssemblyInfo.cs
+C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Application\obj\Debug\netcoreapp2.0\Eventos.IO.Application.csproj.CopyComplete
+C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Application\obj\Debug\netcoreapp2.0\Eventos.IO.Application.dll
+C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Application\obj\Debug\netcoreapp2.0\Eventos.IO.Application.pdb

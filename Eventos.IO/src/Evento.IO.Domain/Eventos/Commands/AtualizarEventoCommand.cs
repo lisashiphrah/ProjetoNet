@@ -9,25 +9,28 @@ namespace Eventos.IO.Domain.Eventos.Commands
         public AtualizarEventoCommand(
             Guid id,
             string nome,
-            string descCurta,
-            string descLonga,
+            string descricaoCurta,
+            string descricaoLonga,
             DateTime dataInicio,
             DateTime dataFim,
             bool gratuito,
             decimal valor,
             bool online,
-            string nomeEmpresa)
+            string nomeEmpresa,
+            Guid organizadorId,
+            Guid categoriaId)
         {
-            Id = id;
             Nome = nome;
-            DescricaoCurta = descCurta;
-            DescricaoLonga = descLonga;
+            DescricaoCurta = descricaoCurta;
+            DescricaoLonga = descricaoLonga;
             DataInicio = dataInicio;
             DataFim = dataFim;
             Gratuito = gratuito;
             Valor = valor;
             Online = online;
             NomeEmpresa = nomeEmpresa;
+            OrganizadorId = organizadorId;
+            CategoriaId = categoriaId;
         }
     }
 }
