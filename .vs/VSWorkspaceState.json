@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Eventos.IO",
-    "\\Eventos.IO\\src",
-    "\\Eventos.IO\\src\\ConsoleApp1",
-    "\\Eventos.IO\\src\\Eventos.IO.Infra.Data"
+    "\\Eventos.IO\\src"
   ],
-  "SelectedNode": "\\Eventos.IO\\src\\Eventos.IO.Infra.Data\\Eventos.IO.Infra.Data.csproj",
+  "SelectedNode": "\\Eventos.IO\\src\\Evento.IO.Domain",
   "PreviewInSolutionExplorer": false
 }
