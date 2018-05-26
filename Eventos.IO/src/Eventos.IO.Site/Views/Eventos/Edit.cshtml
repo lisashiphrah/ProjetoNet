@@ -6,6 +6,8 @@
 
 <h2>Edit</h2>
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+
 <h4>EventoViewModel</h4>
 <hr />
 <div class="row">
@@ -13,6 +15,7 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="OrganizadorId" />
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
                 <input asp-for="Nome" class="form-control" />
@@ -35,12 +38,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="DataInicio" class="control-label"></label>
-                <input asp-for="DataInicio" class="form-control" />
+                <input asp-for="DataInicio" type="datetime" asp-format="{0:dd/MM/yyyy}" class="form-control" />
                 <span asp-validation-for="DataInicio" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DataFim" class="control-label"></label>
-                <input asp-for="DataFim" class="form-control" />
+                <input asp-for="DataFim" type="datetime" asp-format="{0:dd/MM/yyyy}" class="form-control" />
                 <span asp-validation-for="DataFim" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -80,4 +83,41 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.pt-BR.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.pt.min.js"></script>
+    
+    <script>
+        ValidacoesEvento();
+    </script>
+
+    @{
+        if (ViewBag.RetornoPost != null)
+        {
+            var notificacao = ViewBag.RetornoPost.ToString().Split(',');
+
+            <script>
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": true,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": true,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+
+                toastr["@notificacao[0]"]("@notificacao[1]");
+            </script>
+        }
+    }
 }

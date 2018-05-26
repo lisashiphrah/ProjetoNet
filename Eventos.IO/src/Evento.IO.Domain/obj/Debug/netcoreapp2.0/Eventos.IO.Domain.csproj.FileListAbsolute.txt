@@ -3,10 +3,10 @@ C:\Git\ProjetoNet\Eventos.IO\src\Evento.IO.Domain\bin\Debug\netcoreapp2.0\Evento
 C:\Git\ProjetoNet\Eventos.IO\src\Evento.IO.Domain\bin\Debug\netcoreapp2.0\Eventos.IO.Domain.pdb
 C:\Git\ProjetoNet\Eventos.IO\src\Evento.IO.Domain\bin\Debug\netcoreapp2.0\Eventos.IO.Domain.Core.dll
 C:\Git\ProjetoNet\Eventos.IO\src\Evento.IO.Domain\bin\Debug\netcoreapp2.0\Eventos.IO.Domain.Core.pdb
+C:\Git\ProjetoNet\Eventos.IO\src\Evento.IO.Domain\obj\Debug\netcoreapp2.0\Eventos.IO.Domain.csprojAssemblyReference.cache
 C:\Git\ProjetoNet\Eventos.IO\src\Evento.IO.Domain\obj\Debug\netcoreapp2.0\Eventos.IO.Domain.csproj.CoreCompileInputs.cache
 C:\Git\ProjetoNet\Eventos.IO\src\Evento.IO.Domain\obj\Debug\netcoreapp2.0\Eventos.IO.Domain.AssemblyInfoInputs.cache
 C:\Git\ProjetoNet\Eventos.IO\src\Evento.IO.Domain\obj\Debug\netcoreapp2.0\Eventos.IO.Domain.AssemblyInfo.cs
 C:\Git\ProjetoNet\Eventos.IO\src\Evento.IO.Domain\obj\Debug\netcoreapp2.0\Eventos.IO.Domain.csproj.CopyComplete
 C:\Git\ProjetoNet\Eventos.IO\src\Evento.IO.Domain\obj\Debug\netcoreapp2.0\Eventos.IO.Domain.dll
 C:\Git\ProjetoNet\Eventos.IO\src\Evento.IO.Domain\obj\Debug\netcoreapp2.0\Eventos.IO.Domain.pdb
-C:\Git\ProjetoNet\Eventos.IO\src\Evento.IO.Domain\obj\Debug\netcoreapp2.0\Eventos.IO.Domain.csprojAssemblyReference.cache
