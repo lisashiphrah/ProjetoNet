@@ -5132,6 +5132,16 @@
           "bin/placeholder/Eventos.IO.Domain.Core.dll": {}
         }
       },
+      "Eventos.IO.Infra.CrossCutting.AspNetFilters/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Eventos.IO.Infra.CrossCutting.AspNetFilters.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Eventos.IO.Infra.CrossCutting.AspNetFilters.dll": {}
+        }
+      },
       "Eventos.IO.Infra.CrossCutting.Bus/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
@@ -5171,6 +5181,7 @@
         "dependencies": {
           "Eventos.IO.Application": "1.0.0",
           "Eventos.IO.Domain": "1.0.0",
+          "Eventos.IO.Infra.CrossCutting.AspNetFilters": "1.0.0",
           "Eventos.IO.Infra.CrossCutting.Bus": "1.0.0",
           "Eventos.IO.Infra.CrossCutting.Identity": "1.0.0",
           "Eventos.IO.Infra.Data": "1.0.0"
@@ -13507,6 +13518,11 @@
       "path": "../Evento.IO.Domain.Core/Eventos.IO.Domain.Core.csproj",
       "msbuildProject": "../Evento.IO.Domain.Core/Eventos.IO.Domain.Core.csproj"
     },
+    "Eventos.IO.Infra.CrossCutting.AspNetFilters/1.0.0": {
+      "type": "project",
+      "path": "../Eventos.IO.Infra.CrossCutting.AspNetFilters/Eventos.IO.Infra.CrossCutting.AspNetFilters.csproj",
+      "msbuildProject": "../Eventos.IO.Infra.CrossCutting.AspNetFilters/Eventos.IO.Infra.CrossCutting.AspNetFilters.csproj"
+    },
     "Eventos.IO.Infra.CrossCutting.Bus/1.0.0": {
       "type": "project",
       "path": "../Eventos.IO.Infra.CrossCutting.Bus/Eventos.IO.Infra.CrossCutting.Bus.csproj",
@@ -13532,6 +13548,7 @@
     ".NETCoreApp,Version=v2.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 3.2.0",
       "Eventos.IO.Application >= 1.0.0",
+      "Eventos.IO.Infra.CrossCutting.AspNetFilters >= 1.0.0",
       "Eventos.IO.Infra.CrossCutting.Bus >= 1.0.0",
       "Eventos.IO.Infra.CrossCutting.Identity >= 1.0.0",
       "Eventos.IO.Infra.CrossCutting.IoC >= 1.0.0",
@@ -13573,6 +13590,9 @@
           "projectReferences": {
             "C:\\Git\\ProjetoNet\\Eventos.IO\\src\\Eventos.IO.Application\\Eventos.IO.Application.csproj": {
               "projectPath": "C:\\Git\\ProjetoNet\\Eventos.IO\\src\\Eventos.IO.Application\\Eventos.IO.Application.csproj"
+            },
+            "C:\\Git\\ProjetoNet\\Eventos.IO\\src\\Eventos.IO.Infra.CrossCutting.AspNetFilters\\Eventos.IO.Infra.CrossCutting.AspNetFilters.csproj": {
+              "projectPath": "C:\\Git\\ProjetoNet\\Eventos.IO\\src\\Eventos.IO.Infra.CrossCutting.AspNetFilters\\Eventos.IO.Infra.CrossCutting.AspNetFilters.csproj"
             },
             "C:\\Git\\ProjetoNet\\Eventos.IO\\src\\Eventos.IO.Infra.CrossCutting.Bus\\Eventos.IO.Infra.CrossCutting.Bus.csproj": {
               "projectPath": "C:\\Git\\ProjetoNet\\Eventos.IO\\src\\Eventos.IO.Infra.CrossCutting.Bus\\Eventos.IO.Infra.CrossCutting.Bus.csproj"

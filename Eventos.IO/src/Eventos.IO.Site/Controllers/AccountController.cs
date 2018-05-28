@@ -228,9 +228,12 @@ namespace Eventos.IO.Site.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    #region register organizador
+                    
                     var organizador = new OrganizadorViewModel
                     {
                         Id = Guid.Parse(user.Id),
@@ -240,6 +243,20 @@ namespace Eventos.IO.Site.Controllers
                     };
 
                     _organicadorAppService.Registrar(organizador);
+
+                    #endregion
+
+                    #region register claims
+
+                    IEnumerable<Claim> claims = new List<Claim>()
+                    {
+                        new Claim("Eventos", "Ler"),
+                        new Claim("Eventos", "Gravar")
+                    };
+
+                    await _userManager.AddClaimsAsync(user, claims);
+
+                    #endregion
 
                     if (!OperacaoValida())
                     {
@@ -270,7 +287,7 @@ namespace Eventos.IO.Site.Controllers
         {
             await _signInManager.SignOutAsync();
             _logger.LogInformation("User logged out.");
-            return RedirectToAction(nameof(HomeController.Index), "Home");
+            return RedirectToAction(nameof(EventosController.Index), "Eventos");
         }
 
         [HttpPost]
@@ -358,7 +375,7 @@ namespace Eventos.IO.Site.Controllers
         {
             if (userId == null || code == null)
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                return RedirectToAction(nameof(EventosController.Index), "Eventos");
             }
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
@@ -457,7 +474,7 @@ namespace Eventos.IO.Site.Controllers
         [HttpGet]
         public IActionResult AccessDenied()
         {
-            return View();
+            return RedirectToAction("Erros", "Erro", new { id = 403 });
         }
 
         #region Helpers
@@ -478,7 +495,7 @@ namespace Eventos.IO.Site.Controllers
             }
             else
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                return RedirectToAction(nameof(EventosController.Index), "Eventos");
             }
         }
 

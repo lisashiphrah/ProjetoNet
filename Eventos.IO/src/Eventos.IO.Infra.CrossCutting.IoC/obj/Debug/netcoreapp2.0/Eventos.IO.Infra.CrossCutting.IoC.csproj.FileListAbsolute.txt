@@ -21,3 +21,5 @@ C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Infra.CrossCutting.IoC\obj\Debug\net
 C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Infra.CrossCutting.IoC\obj\Debug\netcoreapp2.0\Eventos.IO.Infra.CrossCutting.IoC.pdb
 C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Infra.CrossCutting.IoC\bin\Debug\netcoreapp2.0\Eventos.IO.Infra.CrossCutting.Identity.dll
 C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Infra.CrossCutting.IoC\bin\Debug\netcoreapp2.0\Eventos.IO.Infra.CrossCutting.Identity.pdb
+C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Infra.CrossCutting.IoC\bin\Debug\netcoreapp2.0\Eventos.IO.Infra.CrossCutting.AspNetFilters.dll
+C:\Git\ProjetoNet\Eventos.IO\src\Eventos.IO.Infra.CrossCutting.IoC\bin\Debug\netcoreapp2.0\Eventos.IO.Infra.CrossCutting.AspNetFilters.pdb

@@ -14,6 +14,8 @@ using Eventos.IO.Domain.Interfaces;
 using Eventos.IO.Infra.CrossCutting.Identity.Data;
 using Eventos.IO.Infra.CrossCutting.Identity.Models;
 using Eventos.IO.Infra.CrossCutting.Identity.Services;
+using Microsoft.AspNetCore.Mvc;
+using Eventos.IO.Infra.CrossCutting.AspNetFilters;
 
 namespace Eventos.IO.Site
 {
@@ -40,7 +42,17 @@ namespace Eventos.IO.Site
             services.AddScoped<IEventoAppService, EventoAppService>();
             services.AddScoped<IUser, AspNetUser>();
 
-            services.AddMvc();
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("PodeLerEventos", policy => policy.RequireClaim("Eventos", "Ler"));
+                options.AddPolicy("PodeGravar", policy => policy.RequireClaim("Eventos", "Gravar"));
+            });
+
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(new ServiceFilterAttribute(typeof(GlobalExceptionHandlingFilter)));
+            });
+
             services.AddAutoMapper();
 
             RegisterServices(services);
@@ -59,7 +71,8 @@ namespace Eventos.IO.Site
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/erro-de-aplicacao");
+                app.UseStatusCodePagesWithReExecute("/erro-de-aplicacao/{0}");
             }
 
             app.UseStaticFiles();
