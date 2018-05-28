@@ -54,13 +54,13 @@ namespace Eventos.IO.Domain.Eventos
 
         public void AtribuirEndereco(Endereco endereco)
         {
-            if (Endereco.EhValido()) return;
+            if (!endereco.EhValido()) return;
             Endereco = endereco;
         }
 
         public void AtribuirCategoria(Categoria categoria)
         {
-            if (Categoria.EhValido()) return;
+            if (!Categoria.EhValido()) return;
             Categoria = categoria;
         }
 

@@ -12,6 +12,8 @@ using Eventos.IO.Domain.Organizadores.Commands;
 using Eventos.IO.Domain.Organizadores.Events;
 using Eventos.IO.Domain.Organizadores.Repository;
 using Eventos.IO.Infra.CrossCutting.Bus;
+using Eventos.IO.Infra.CrossCutting.Identity.Models;
+using Eventos.IO.Infra.CrossCutting.Identity.Services;
 using Eventos.IO.Infra.Data.Context;
 using Eventos.IO.Infra.Data.Repository;
 using Eventos.IO.Infra.Data.UoW;
@@ -37,6 +39,8 @@ namespace Eventos.IO.Infra.CrossCutting.IoC
             services.AddScoped<IHandler<RegistrarEventoCommand>, EventoCommandHandler>();
             services.AddScoped<IHandler<AtualizarEventoCommand>, EventoCommandHandler>();
             services.AddScoped<IHandler<ExcluirEventoCommand>, EventoCommandHandler>();
+            services.AddScoped<IHandler<IncluirEnderecoEventoCommand>, EventoCommandHandler>();
+            services.AddScoped<IHandler<AtualizarEnderecoEventoCommand>, EventoCommandHandler>();
             services.AddScoped<IHandler<RegistrarOrganizadorCommand>, OrganizadorCommandHandler>();
 
             // Domain - Eventos
@@ -44,6 +48,8 @@ namespace Eventos.IO.Infra.CrossCutting.IoC
             services.AddScoped<IHandler<EventoRegistradoEvent>, EventoEventHandler>();
             services.AddScoped<IHandler<EventoAtualizadoEvent>, EventoEventHandler>();
             services.AddScoped<IHandler<EventoExcluidoEvent>, EventoEventHandler>();
+            services.AddScoped<IHandler<EnderecoEventoAdicionadoEvent>, EventoEventHandler>();
+            services.AddScoped<IHandler<EnderecoEventoAtualizadoEvent>, EventoEventHandler>();
             services.AddScoped<IHandler<OrganizadorRegistradoEvent>, OrganizadorEventHandler>();
 
             // Infra - Data

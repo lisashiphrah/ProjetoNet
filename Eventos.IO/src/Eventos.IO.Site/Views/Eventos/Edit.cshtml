@@ -1,19 +1,21 @@
 ﻿@model Eventos.IO.Application.ViewModels.EventoViewModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Evento";
 }
 
-<h2>Edit</h2>
+<h2>@ViewData["Title"]</h2>
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
 
-<h4>EventoViewModel</h4>
+<h4>Lembre-se que muitas pessoas já podem ter visto o evento antes de mudar datas e etc.</h4>
 <hr />
+
+<vc:summary />
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <input type="hidden" asp-for="OrganizadorId" />
             <div class="form-group">
@@ -28,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="DescricaoLonga" class="control-label"></label>
-                <textarea asp-for="DescricaoLonga" class="form-control"></textarea>
+                <textarea rows="5" asp-for="DescricaoLonga" class="form-control"></textarea>
                 <span asp-validation-for="DescricaoLonga" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -70,15 +72,28 @@
                 <input asp-for="NomeEmpresa" class="form-control" />
                 <span asp-validation-for="NomeEmpresa" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" id="btSubmit" value="Atualizar Evento" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-info">Voltar para a lista</a>
             </div>
         </form>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+    <div id="EnderecoForm" class="col-md-12">
+        <div id="EnderecoTarget">
+            @Html.Partial("_DetalhesEndereco")
+        </div>
+    </div>
+
+    <div id="myModal" class="modal fade in">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="myModalContent"></div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 @section Scripts {
@@ -87,9 +102,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.pt-BR.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.pt.min.js"></script>
-    
+
     <script>
         ValidacoesEvento();
+        AjaxModal();
     </script>
 
     @{
@@ -98,26 +114,24 @@
             var notificacao = ViewBag.RetornoPost.ToString().Split(',');
 
             <script>
-                toastr.options = {
-                    "closeButton": false,
-                    "debug": true,
-                    "newestOnTop": false,
-                    "progressBar": true,
-                    "positionClass": "toast-top-right",
-                    "preventDuplicates": true,
-                    "onclick": null,
-                    "showDuration": "300",
-                    "hideDuration": "1000",
-                    "timeOut": "5000",
-                    "extendedTimeOut": "1000",
-                    "showEasing": "swing",
-                    "hideEasing": "linear",
-                    "showMethod": "fadeIn",
-                    "hideMethod": "fadeOut"
-                }
-
                 toastr["@notificacao[0]"]("@notificacao[1]");
             </script>
+
+            if (@notificacao[0] == "success")
+            {
+                <script>
+                    toastr.options.onHidden = function () {
+                        window.location = "https://localhost:44313/Eventos/MeusEventos"
+                    }
+                    toastr.options.onclick = function () {
+                        window.location = "https://localhost:44313/Eventos/MeusEventos"
+                    }
+                    toastr.options.onCloseClick = function () {
+                        window.location = "https://localhost:44313/Eventos/MeusEventos"
+                    }
+                    $("#btSubmit").prop("disabled", true);
+                </script>
+            }
         }
     }
 }

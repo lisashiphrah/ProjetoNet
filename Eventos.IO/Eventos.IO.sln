@@ -23,13 +23,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventos.IO.Domain.Core", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventos.IO.Infra.Data", "src\Eventos.IO.Infra.Data\Eventos.IO.Infra.Data.csproj", "{9B2ED0AE-5478-4A68-9E91-3D7FD3BBC834}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos.IO.Application", "src\Eventos.IO.Application\Eventos.IO.Application.csproj", "{EDE41096-4A0D-4DA2-A375-3FF528545F19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventos.IO.Application", "src\Eventos.IO.Application\Eventos.IO.Application.csproj", "{EDE41096-4A0D-4DA2-A375-3FF528545F19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos.IO.Site", "src\Eventos.IO.Site\Eventos.IO.Site.csproj", "{FE56C307-AB17-425B-8B8F-D0BC7A555F1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventos.IO.Site", "src\Eventos.IO.Site\Eventos.IO.Site.csproj", "{FE56C307-AB17-425B-8B8F-D0BC7A555F1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos.IO.Infra.CrossCutting.IoC", "src\Eventos.IO.Infra.CrossCutting.IoC\Eventos.IO.Infra.CrossCutting.IoC.csproj", "{B5E20F9F-4798-4A4B-9CF9-05EC0C455E6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventos.IO.Infra.CrossCutting.IoC", "src\Eventos.IO.Infra.CrossCutting.IoC\Eventos.IO.Infra.CrossCutting.IoC.csproj", "{B5E20F9F-4798-4A4B-9CF9-05EC0C455E6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos.IO.Infra.CrossCutting.Bus", "src\Eventos.IO.Infra.CrossCutting.Bus\Eventos.IO.Infra.CrossCutting.Bus.csproj", "{4326D657-7570-48E0-8E6F-E4C0D5295A8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventos.IO.Infra.CrossCutting.Bus", "src\Eventos.IO.Infra.CrossCutting.Bus\Eventos.IO.Infra.CrossCutting.Bus.csproj", "{4326D657-7570-48E0-8E6F-E4C0D5295A8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos.IO.Infra.CrossCutting.Identity", "src\Eventos.IO.Infra.CrossCutting.Identity\Eventos.IO.Infra.CrossCutting.Identity.csproj", "{539B9C5C-C3A8-4FA2-8513-E250390B7787}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{4326D657-7570-48E0-8E6F-E4C0D5295A8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4326D657-7570-48E0-8E6F-E4C0D5295A8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4326D657-7570-48E0-8E6F-E4C0D5295A8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{539B9C5C-C3A8-4FA2-8513-E250390B7787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{539B9C5C-C3A8-4FA2-8513-E250390B7787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{539B9C5C-C3A8-4FA2-8513-E250390B7787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{539B9C5C-C3A8-4FA2-8513-E250390B7787}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +85,7 @@ Global
 		{FE56C307-AB17-425B-8B8F-D0BC7A555F1A} = {140104CD-A430-4F78-8ECB-66698660E6DB}
 		{B5E20F9F-4798-4A4B-9CF9-05EC0C455E6F} = {8EB107B2-8BF1-4511-A0F9-9B37568C9899}
 		{4326D657-7570-48E0-8E6F-E4C0D5295A8F} = {8EB107B2-8BF1-4511-A0F9-9B37568C9899}
+		{539B9C5C-C3A8-4FA2-8513-E250390B7787} = {8EB107B2-8BF1-4511-A0F9-9B37568C9899}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5C43164A-E6FF-43E0-826B-E35C372F77A0}

@@ -48,8 +48,8 @@ namespace Eventos.IO.Infra.Data.Repository
         public IEnumerable<Evento> ObterEventoPorOrganizador(Guid organicadorId)
         {
             var sql = @"SELECT * FROM EVENTOS E " +
-                      "WHERE E.EXCLUIDO = 0" +
-                      "AND E.ORGANIZADOR = @oid" +
+                      "WHERE E.EXCLUIDO = 0 " +
+                      "AND E.ORGANIZADORID = @oid " +
                       "ORDER BY E.DATAFIM DESC";
 
             return Db.Database.GetDbConnection().Query<Evento>(sql, new { oid = organicadorId });
@@ -57,10 +57,10 @@ namespace Eventos.IO.Infra.Data.Repository
 
         public override Evento ObterPorId(Guid id)
         {
-            var sql = @"SELECT * FROM EVENTOS E " +
-                      "LEFT JOIN ENDERECOS EN " +
-                      "ON E.ID = EN.EVENTOID " +
-                      "WHERE E.ID = @uid";
+            var sql = @"SELECT * FROM Eventos E " +
+                      "LEFT JOIN Enderecos EN " +
+                      "ON E.Id = EN.EventoId " +
+                      "WHERE e.Id = @uid";
 
             var evento = Db.Database.GetDbConnection().Query<Evento, Endereco, Evento>(sql,
                 (e, en) =>
@@ -72,6 +72,13 @@ namespace Eventos.IO.Infra.Data.Repository
                 }, new {uid = id});
 
             return evento.FirstOrDefault();
+        }
+
+        public override void Remover(Guid id)
+        {
+            var evento = ObterPorId(id);
+            evento.ExcluirEvento();
+            base.Atualizar(evento);
         }
     }
 }

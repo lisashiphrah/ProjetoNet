@@ -1,4 +1,4 @@
-﻿@using Eventos.IO.Site.Views.Manage
+﻿@using Eventos.IO.Infra.CrossCutting.Identity.Models
 @inject SignInManager<ApplicationUser> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
