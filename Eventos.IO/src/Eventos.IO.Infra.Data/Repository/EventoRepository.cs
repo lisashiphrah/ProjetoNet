@@ -55,6 +55,12 @@ namespace Eventos.IO.Infra.Data.Repository
             return Db.Database.GetDbConnection().Query<Evento>(sql, new { oid = organicadorId });
         }
 
+        public IEnumerable<Categoria> ObterCategorias()
+        {
+            var sql = @"SELECT * FROM Categorias";
+            return Db.Database.GetDbConnection().Query<Categoria>(sql);
+        }
+
         public override Evento ObterPorId(Guid id)
         {
             var sql = @"SELECT * FROM Eventos E " +

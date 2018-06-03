@@ -17,7 +17,7 @@ namespace Eventos.IO.Site.Controllers
             _notifications = notifications;
             _user = user;
 
-            if (_user.IsAuthenticaded())
+            if (_user.IsAuthenticated())
             {
                 OrganizadorId = _user.GetUserId();
             }

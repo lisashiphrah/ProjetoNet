@@ -63,6 +63,9 @@ namespace Eventos.IO.Infra.CrossCutting.IoC
             // Infra - Bus
             services.AddScoped<IBus, InMemoryBus>();
 
+            // Infra - Identity
+            services.AddScoped<IUser, AspNetUser>();
+
             // Infra - Filters
             services.AddScoped<ILogger<GlobalExceptionHandlingFilter>, Logger<GlobalExceptionHandlingFilter>>();
             services.AddScoped<GlobalExceptionHandlingFilter>();

@@ -9,7 +9,7 @@ namespace Eventos.IO.Domain.Interfaces
     {
         string Name { get; }
         Guid GetUserId();
-        bool IsAuthenticaded();
+        bool IsAuthenticated();
         IEnumerable<Claim> GetClaimsIdentity();
     }
 }

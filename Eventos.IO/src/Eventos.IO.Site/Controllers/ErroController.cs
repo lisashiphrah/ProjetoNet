@@ -24,7 +24,7 @@ namespace Eventos.IO.Site.Controllers
                     return View("NotFound");
                 case "403":
                 case "401":
-                    if (!_user.IsAuthenticaded()) return RedirectToAction("Login", "Account");
+                    if (!_user.IsAuthenticated()) return RedirectToAction("Login", "Account");
                     return View("AccessDenied");
             }
 

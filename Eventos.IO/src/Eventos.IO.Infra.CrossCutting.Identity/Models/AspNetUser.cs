@@ -26,10 +26,10 @@ namespace Eventos.IO.Infra.CrossCutting.Identity.Models
 
         public Guid GetUserId()
         {
-            return IsAuthenticaded() ? Guid.Parse(_accessor.HttpContext.User.GetUserId()) : Guid.NewGuid();
+            return IsAuthenticated() ? Guid.Parse(_accessor.HttpContext.User.GetUserId()) : Guid.NewGuid();
         }
 
-        public bool IsAuthenticaded()
+        public bool IsAuthenticated()
         {
             return _accessor.HttpContext.User.Identity.IsAuthenticated;
         }

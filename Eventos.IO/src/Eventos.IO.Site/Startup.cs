@@ -40,7 +40,6 @@ namespace Eventos.IO.Site
 
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddScoped<IEventoAppService, EventoAppService>();
-            services.AddScoped<IUser, AspNetUser>();
 
             services.AddAuthorization(options =>
             {
