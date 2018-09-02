@@ -22,7 +22,8 @@ namespace Eventos.IO.Services.Api.Controllers
 
         public EventosController(IDomainNotificationHandler<DomainNotification> notifications,
                                  IUser user,
-                                 IBus bus, IEventoAppService eventoAppService,
+                                 IBus bus, 
+                                 IEventoAppService eventoAppService,
                                  IEventoRepository eventoRepository,
                                  IMapper mapper) : base(notifications, user, bus)
         {
@@ -54,6 +55,14 @@ namespace Eventos.IO.Services.Api.Controllers
         public IEnumerable<CategoriaViewModel> ObterCategorias()
         {
             return _mapper.Map<IEnumerable<CategoriaViewModel>>(_eventoRepository.ObterCategorias());
+        }
+
+        [HttpGet]
+        [Authorize(Policy = "PodeLerEventos")]
+        [Route("eventos/meus-eventos")]
+        public IEnumerable<EventoViewModel> ObterMeusEventos()
+        {
+            return _mapper.Map<IEnumerable<EventoViewModel>>(_eventoRepository.ObterEventoPorOrganizador(OrganizadorId));
         }
 
         [HttpPost]

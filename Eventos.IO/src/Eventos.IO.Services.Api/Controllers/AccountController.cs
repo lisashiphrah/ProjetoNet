@@ -2,6 +2,7 @@
 using Eventos.IO.Domain.Core.Notifications;
 using Eventos.IO.Domain.Interfaces;
 using Eventos.IO.Domain.Organizadores.Commands;
+using Eventos.IO.Domain.Organizadores.Repository;
 using Eventos.IO.Infra.CrossCutting.Identity.Authorization;
 using Eventos.IO.Infra.CrossCutting.Identity.Models;
 using Eventos.IO.Infra.CrossCutting.Identity.Models.AccountViewModels;
@@ -25,6 +26,7 @@ namespace Eventos.IO.Services.Api.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ILogger _logger;
         private readonly IBus _bus;
+        private readonly IOrganizadorRepository _organizadorRepository;
 
         private readonly JwtTokenOptions _jwtTokenOptions;
 
@@ -35,11 +37,13 @@ namespace Eventos.IO.Services.Api.Controllers
                         IOptions<JwtTokenOptions> jwtTokenOptions,
                         IBus bus,
                         IDomainNotificationHandler<DomainNotification> notifications,
-                        IUser user) : base(notifications, user, bus)
+                        IUser user,
+                        IOrganizadorRepository organizadorRepository) : base(notifications, user, bus)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _bus = bus;
+            _organizadorRepository = organizadorRepository;
             _jwtTokenOptions = jwtTokenOptions.Value;
 
             ThrowIfInvalidOptions(_jwtTokenOptions);
@@ -73,6 +77,15 @@ namespace Eventos.IO.Services.Api.Controllers
 
             if (result.Succeeded)
             {
+                #region register claims
+                IEnumerable<Claim> claims = new List<Claim>()
+                    {
+                        new Claim("Eventos", "Ler"),
+                        new Claim("Eventos", "Gravar")
+                    };
+                await _userManager.AddClaimsAsync(user, claims);
+                #endregion
+
                 var registerCommand = new RegistrarOrganizadorCommand(Guid.Parse(user.Id), model.Nome, model.CPF, user.Email);
                 _bus.SendCommands(registerCommand);
 
@@ -135,12 +148,19 @@ namespace Eventos.IO.Services.Api.Controllers
                   signingCredentials: _jwtTokenOptions.SigningCredentials);
 
             var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
+            var orgUser = _organizadorRepository.ObterPorId(Guid.Parse(user.Id));
 
             var response = new
             {
                 access_token = encodedJwt,
                 expires_in = (int)_jwtTokenOptions.ValidFor.TotalSeconds,
-                user = user
+                user = new
+                {
+                    id = user.Id,
+                    nome = orgUser.Nome,
+                    email = orgUser.Email,
+                    claims = userClaims.Select(c => new { c.Type, c.Value })
+                }
             };
 
             return response;

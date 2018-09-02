@@ -157,7 +157,7 @@ namespace Eventos.IO.Services.Api
             app.UseIdentity();
             app.UseMvc();
 
-            app.UseSwaggerAuthorized();
+            //app.UseSwaggerAuthorized();
             app.UseSwagger();
             app.UseSwaggerUI(s =>
             {
